@@ -1,0 +1,261 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header {
+    background-color: #1b3039;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 85px;
+    width: 100%;
+    padding: 1px 5%;
+}
+
+.header .logo {
+    cursor: pointer;
+}
+
+.header .logo img {
+    height: 57.5px;
+    width: auto;
+    transition: all 0.3s;
+}
+
+.header .logo img:hover {
+    transform: scale(1.1);
+}
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    font-size: 30px;
+    color: #eceff1;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+
+.nav-links {
+	list-style: none;
+	display: flex;
+}
+
+.nav-links ul {
+	display: flex;
+	padding: 0;
+}
+
+.nav-links ul li {
+	display: inline-block;
+	padding: 0 20px;
+}
+
+.nav-links ul li:hover {
+	transform: scale(1.1);
+}
+
+.nav-links a {
+	font-weight: 700;
+	font-family: "Tahoma";
+	color: #eceff1;
+	text-decoration: none;
+	position: relative;
+}
+
+.nav-links li a:hover {
+	color: #ffbc0e;
+}
+
+.nav-links li a::after {
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 2px;
+	display: block;
+	margin-top: 5px;
+	right: 0;
+	background: #ffbc0e;
+	transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+	width: 100%;
+	left: 0;
+	background: #ffbc0e;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 85px;
+        right: 0;
+        background-color: #1b3039;
+        padding: 10px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+        width: 100%;
+        z-index: 999;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+    }
+
+    .nav-links ul li {
+        margin: 10px 0;
+    }
+
+    #menu-toggle:checked ~ .nav-links {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: inline-block;
+    }
+
+    .logo {
+        order: -1;
+    }
+}
+
+.main-content {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+.historia {
+    background-color: rgb(27, 27, 27);
+    color: white;
+    padding: 50px 20px;
+}
+
+.historia h1 {
+    color: #ffbc0e;
+    font-family: 'Noticia Text', serif;
+    font-weight: lighter;
+    font-size: 70px;
+}
+
+.historia h2 {
+    font-size: 18px;
+    color: white;
+    font-family: 'Gruppo', sans-serif;
+}
+
+.historia p {
+    font-family: 'Ysabeau', sans-serif;
+    color: white;
+    font-size: 22px;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card {
+    position: relative;
+    width: 300px;
+    height: 350px;
+    margin: 20px;
+    perspective: 1000px;
+}
+
+.card .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.5s;
+}
+
+.card .front {
+    transform: rotateY(0deg);
+    box-shadow: 0 5px 10px #000;
+}
+
+.card .front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card .front h3 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+.card .back {
+    transform: rotateY(180deg);
+    background: #ffbc0e;
+    padding: 15px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 5px 10px #000;
+}
+
+.card .back h3 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.card .back p {
+    letter-spacing: 1px;
+}
+
+.card:hover .front {
+    transform: rotateY(180deg);
+}
+
+.card:hover .back {
+    transform: rotateY(360deg);
+}
+
+.footer {
+    background-color: #1b3039;
+    color: #eceff1;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+}
+
+.footer .social-media a {
+    color: #eceff1;
+    margin: 0 10px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.footer .social-media a:hover {
+    color: #ffbc0e;
+}

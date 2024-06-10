@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Reservaciones</title>
+	<link rel="shortcut icon" href="../img/TeloCentral_Icono.jpeg">
+	<link rel="stylesheet" href="../css/estilo_servicios.css">
+	<link rel="stylesheet" href="../css/estilos.css">
+	<link rel="stylesheet" href="../css/estilos3.css">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<script type="text/javascript" src="../menu.js" defer></script>
+</head>
+
+<body>
+	<header class="header">
+		<div class="logo">
+			<img src="../img/TeloCentral.jpeg" alt="Logo de la marca">
+		</div>
+		<div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+		<nav class="nav-links" id="nav-links">
+			<ul>
+				<li><a href="../index.html">Inicio</a></li>
+				<li><a href="../historia/historia.html">Historia</a></li>
+				<li><a href="../servicios/servicios.html">Servicios</a></li>
+				<li><a href="../reservaciones/reservaciones.html">Reservaciones</a></li>
+				<li><a href="../galeria/galeria.html">Galería</a></li>
+				<li><a href="../promociones/promociones.html">Promociones</a></li>
+				<li><a href="../contactos/contactos.html">Contactos</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<body>
+		<section class="formulario-derecho">
+			<form>
+				<br>
+				<h2>Información Personal</h2>
+				<br>
+				<label for="label">Nombre del Huésped</label>
+				<input type="text" name="txtnombres" required="">
+
+				<label for="label">DNI</label>
+				<input type="text" name="txtdni" enabled />
+				<br>
+				<h2>Información de la Reserva</h2>
+				<label for="label">Tipo de Habitación </label>
+				<select onchange="mostrarImagen()" id="opciones">
+
+					<optgroup label="Habitación Estándar"></optgroup>
+					<option value="imagen1.jpg">Individual - H001</option>
+					<option value="imagen1.jpg">Individual - H002</option>
+					<option value="imagen1.jpg">Individual - H003</option>
+					<option value="imagen1.jpg">Individual - H004</option>
+					<option value="imagen2.jpg">Doble - H005</option>
+					<option value="imagen2.jpg">Doble - H006</option>
+					<optgroup label="Habitación de Lujo"></optgroup>
+					<option value="images3.jpeg">Especial - H007</option>
+					<option value="images3.jpeg">Especial - H008</option>
+					<option value="images3.jpeg">Especial - H008</option>
+					<option value="images3.jpeg">Especial - H009</option>
+					<option value="images3.jpeg">Especial - H010</option>
+					<option value="images3.jpeg">Especial - H011</option>
+					<option value="images3.jpeg">Especial - H012</option>
+					<option value="images3.jpeg">Especial - H013</option>
+					<option value="images3.jpeg">Especial - H014</option>
+					<option value="images3.jpeg">Especial - H015</option>
+					<optgroup label="Habitación de Bodas"></optgroup>
+					<option value="imagen4.jpg">Premium - H016</option>
+					<option value="imagen4.jpg">Premium - H017</option>
+					<option value="imagen4.jpg">Premium - H018</option>
+					<option value="imagen4.jpg">Premium - H019</option>
+					<option value="imagen4.jpg">Premium - H020</option>
+					<optgroup label="Habitación Ejecutivo"></optgroup>
+					<option value="imagen5.jpg">Premium - H021</option>
+					<option value="imagen5.jpg">Premium - H022</option>
+					<option value="imagen5.jpg">Premium - H023</option>
+				</select>
+				<br>
+
+				<img id="imagenMostrada" src="" alt="" width="250" height="200" />
+
+				<label for="label">Fecha de Entrada</label>
+				<input type="datetime-local" name="txtfecha_entrada" />
+				<br>
+
+				<label for="label">Fecha de Salida</label>
+				<input type="datetime-local" name="txtfecha_salida" />
+				<br>
+
+				<label for="label">Tipo de Pago<br><br>
+
+					<label id="label"></label>
+					<input type="radio" name="btnestado" value="s" checked="checked" /> Efectivo<br>
+
+					<label id="label"></label>
+					<input type="radio" name="btnestado" value="c"> Paypal<br>
+
+					<label id="label"></label>
+					<input type="radio" name="btnestado" value="c"> Tarjeta de Débito<br>
+
+					<label id="label"></label>
+					<input type="radio" name="btnestado" value="c"> Tarjeta de Crédito<br><br>
+			</form>
+			<a class="btn" href="../contactos/contactos.html"><button>Reservar ahora</button></a>
+		</section>
+
+
+		<section class="imagen-izquierdo">
+
+		</section>
+
+		<script>
+			function mostrarImagen() {
+				// Obtener el valor seleccionado de la lista
+				var seleccion = document.getElementById("opciones").value;
+
+				// Obtener la referencia del elemento img
+				var imagen = document.getElementById("imagenMostrada");
+
+				// Actualizar la imagen mostrada
+				imagen.src = seleccion;
+			}
+		</script>
+
+	</body>
+
+</html>

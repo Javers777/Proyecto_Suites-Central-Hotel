@@ -1,0 +1,106 @@
+*{
+
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/*Estilo para el fondo de la pagina web*/
+body{
+
+	width: 100%;
+	height: 1250px;
+	font-family: tahoma;
+	
+}
+
+.imagen-izquierdo{
+	
+	width: 50%;
+	height: 1350px;
+	overflow: hidden;
+	float: right;
+	background: url('../img/reservaciones/persona.jpg') no-repeat center top;
+
+	background-size: cover;
+}
+
+/*Estilo para el formulario*/
+.formulario-derecho{
+
+	width: 50%;
+	height: 1350px;
+	margin: 0;
+	float: left;
+	background: #fff;
+	display: flex;
+	justify-content: center;
+}
+
+.formulario-derecho form{
+
+	width: 55%;
+	height: 1300px;
+	display: flex;
+	flex-direction: column;
+	justify-content: left;
+	align-items: center;
+}
+
+.formulario-derecho h2{
+
+	font-size: 2em;
+	color: #ec2f2f;
+	margin: 20px 0;
+	text-align: center;
+	font-weight: bold;
+}
+
+.formulario-derecho form > input{
+	width: 100%;
+	padding: 10px 0;
+	font-size: 1.2em;
+}
+
+.formulario-derecho form > select{
+	width: 100%;
+	padding: 10px 0;
+	font-size: 1.2em;
+}
+
+
+.formulario-derecho label{
+	width: 100%;
+	font-size: 18px;
+	font-weight: 700;
+	margin: 20px 0;
+}
+/* Eliminamos el estilo que afecta a los enlaces dentro del formulario */
+.formulario-derecho a {
+    background-color: transparent;
+    color: inherit;
+    border: none;
+    font-size: inherit;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    text-align: inherit;
+    display: inline;
+    width: auto;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .imagen-izquierdo {
+        display: none;
+    }
+
+    .formulario-derecho {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .formulario-derecho form {
+        width: 100%;
+    }
+}
